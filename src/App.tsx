@@ -1,11 +1,15 @@
+import { SimplePost } from "./components/Simple/SimplePost";
 
 function App() {
-
   return (
     <>
-      <h1>Hello World</h1>
+      <SimplePost
+        content="Hello World"
+        user="John Doe"
+        likesBy={["Jane Doe", "Jim Doe"]}
+      />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

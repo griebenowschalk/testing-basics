@@ -1,4 +1,4 @@
-import { First } from "./First";
+import { First } from "../components/First";
 import { render } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
 

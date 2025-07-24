@@ -1,0 +1,16 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`SimplePostSnap snapshot test suite > initial test 1`] = `
+<DocumentFragment>
+  <div
+    data-testid="post-container"
+  >
+    <h2>
+      John:
+    </h2>
+    <p>
+      Hello
+    </p>
+  </div>
+</DocumentFragment>
+`;

@@ -1,13 +1,9 @@
-import { SimplePost } from "./components/Simple/SimplePost";
+import { AppWithRoutes } from "./components/Router/AppWithRoutes";
 
 function App() {
   return (
     <>
-      <SimplePost
-        content="Hello World"
-        user="John Doe"
-        likesBy={["Jane Doe", "Jim Doe"]}
-      />
+      <AppWithRoutes />
     </>
   );
 }

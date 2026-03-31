@@ -1,5 +1,31 @@
 # Testing Concepts & Notes
 
+## Companion Index
+
+- Concrete test-file index: [`src/__tests__/README.md`](./src/__tests__/README.md)
+- Test runtime config: [`vitest.config.ts`](./vitest.config.ts)
+- Global test setup: [`test/setup.ts`](./test/setup.ts)
+
+## In-Repo Method Map (where to find examples)
+
+- **Mocks and spies**: `src/__tests__/ShoppingList.test.tsx`, `src/__tests__/Post.test.tsx`, `src/__tests__/PostTDD.test.tsx`
+- **Network testing**: axios spy + MSW interception in `src/__tests__/PostNetwork.test.tsx`
+- **User interaction tests**: `src/__tests__/PostWithComment.test.tsx`, `src/__tests__/RoutesConfig.test.tsx`, `src/__tests__/ShoppingList.test.tsx`
+- **Router tests**: `src/__tests__/RoutesConfig.test.tsx`, `src/__tests__/AppWithRoutes.test.tsx`
+- **Hook tests**: `src/__tests__/UseArray.test.tsx`
+- **Snapshot tests**: `src/__tests__/SimplePostSnap.test.tsx`
+- **Error tests**: throw assertion in `src/__tests__/ShoppingList1.test.tsx`, UI error assertion in `src/__tests__/ShoppingList2.test.tsx`
+- **Pending/skipped tests**: `src/__tests__/SimplePost.test.tsx`, `src/__tests__/AppWithRoutes.test.tsx`
+
+## Test Type Labels Used In This Repo
+
+- **Unit**: isolated logic, hooks, or behavior with doubles/mocks.
+  - Examples: `src/__tests__/UseArray.test.tsx`, `src/__tests__/ShoppingList1.test.tsx`, `src/__tests__/ShoppingList.test.tsx`
+- **Component**: rendered UI behavior in component scope.
+  - Examples: `src/__tests__/First.test.tsx`, `src/__tests__/SimplePost.test.tsx`, `src/__tests__/PostWithComment.test.tsx`, `src/__tests__/ShoppingList2.test.tsx`, `src/__tests__/SimplePostSnap.test.tsx`
+- **Integration**: multiple units + boundaries together (router/network/service + component).
+  - Examples: `src/__tests__/RoutesConfig.test.tsx`, `src/__tests__/AppWithRoutes.test.tsx`, `src/__tests__/Post.test.tsx`, `src/__tests__/PostNetwork.test.tsx`, `src/__tests__/PostTDD.test.tsx`
+
 ## Test Doubles
 
 Test doubles are objects used in place of real dependencies during testing. They help isolate the unit under test by controlling or observing interactions with external dependencies.

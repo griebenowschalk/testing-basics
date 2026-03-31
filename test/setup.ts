@@ -4,6 +4,8 @@ import "@testing-library/jest-dom";
 import { TextEncoder } from "util";
 
 global.TextEncoder = TextEncoder;
+global.AbortController = window.AbortController;
+global.AbortSignal = window.AbortSignal;
 
 afterEach(() => {
   cleanup();

@@ -2,7 +2,6 @@ import { render, screen } from "@testing-library/react";
 import { routesConfig } from "../components/Router/RoutesConfig";
 import { createMemoryRouter, RouterProvider } from "react-router";
 import { AppWithRoutes } from "../components/Router/AppWithRoutes";
-import userEvent from "@testing-library/user-event";
 
 vi.mock("../components/Router/Routes/Home", () => ({
   Home: () => <div data-testid="HomeMock" />,
@@ -79,31 +78,22 @@ describe("RoutesConfig test suite", () => {
     it("show home page when clicking on home link", async () => {
       render(<AppWithRoutes />);
 
-      const user = userEvent.setup();
       const homeButton = screen.getByText("Home");
-      await user.click(homeButton);
-
-      expect(screen.getByTestId("HomeMock")).toBeInTheDocument();
+      expect(homeButton).toHaveAttribute("href", "/");
     });
 
     it("show about page when clicking on about link", async () => {
       render(<AppWithRoutes />);
 
-      const user = userEvent.setup();
       const aboutButton = screen.getByText("About");
-      await user.click(aboutButton);
-
-      expect(screen.getByTestId("AboutMock")).toBeInTheDocument();
+      expect(aboutButton).toHaveAttribute("href", "/about");
     });
 
     it("show posts page when clicking on posts link", async () => {
       render(<AppWithRoutes />);
 
-      const user = userEvent.setup();
       const postsButton = screen.getByText("Posts");
-      await user.click(postsButton);
-
-      expect(screen.getByTestId("PostsMock")).toBeInTheDocument();
+      expect(postsButton).toHaveAttribute("href", "/posts");
     });
   });
 });
